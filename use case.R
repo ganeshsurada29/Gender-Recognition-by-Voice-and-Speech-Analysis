@@ -19,6 +19,10 @@ vc$label <- as.numeric(vc$label)
 head(vc$label)
 tail(vc$label)
 
+set.seed(55)
+vctrain <- sample(row.names(vc), 0.5*dim(vc)[1])
+vcvalid <- setdiff(row.names(vc), vctrain)
+
 vctrain.norm <- vctrain
 vcvalid.norm <- vcvalid
 vc.norm <- vc
